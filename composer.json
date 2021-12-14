@@ -1,0 +1,15 @@
+{
+  "name": "baturkacamak/unyson-options-builder",
+  "description": "IDE friendly Unyson options builder",
+  "authors": [
+    {
+      "name": "Batur Kacamak",
+      "email": "hello@batur.info"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "UnysonOptionsBuilder\\": "inc/"
+    }
+  }
+}

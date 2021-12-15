@@ -119,7 +119,8 @@ abstract class OptionAbstract implements Option
 
         foreach ($this->properties as $key => $value) {
             if (isset($this->{$key}) && $this->{$key} !== $value) {
-                $data[$key] = $this->{$key};
+                $converted_key = $this->convertCamelToKebabCase($key);
+                $data[$converted_key] = $this->{$key};
             }
         }
 
@@ -168,4 +169,14 @@ abstract class OptionAbstract implements Option
             $this->properties[$index] = $get_object_var;
         }
     }
+
+    /**
+     * @param int|string $key
+     *
+     * @return string
+     */
+    private function convertCamelToKebabCase(int|string $key): string
+    {
+        return strtolower(preg_replace('/(?<!^)[A-Z]/', '-$0', $key));
+}
 }

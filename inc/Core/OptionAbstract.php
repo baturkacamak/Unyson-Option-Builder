@@ -36,7 +36,7 @@ abstract class OptionAbstract implements Option
      *
      * @var array
      */
-    protected array $attr = [];
+    protected array $attributes = [];
 
     /**
      * The $label property is a string that will store the label of the option,
@@ -155,16 +155,16 @@ abstract class OptionAbstract implements Option
     }
 
     /**
-     * The withAttr() method sets the HTML attributes of the option, such as the
+     * The withAttributes() method sets the HTML attributes of the option, such as the
      * `class` attribute or the `style` attribute.
      *
-     * @param array $attr The HTML attributes of the option.
+     * @param array $attributes The HTML attributes of the option.
      *
      * @return OptionAbstract The option object, for method chaining.
      */
-    public function withAttr(array $attr): OptionAbstract
+    public function withAttributes(array $attributes): OptionAbstract
     {
-        $this->attr = $attr;
+        $this->attributes = $attributes;
 
         return $this;
     }

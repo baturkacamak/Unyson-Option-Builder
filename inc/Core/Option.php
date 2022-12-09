@@ -31,14 +31,14 @@ interface Option
     public function withValue(string $value): OptionAbstract;
 
     /**
-     * The withAttr() method sets the HTML attributes of the option.
+     * The withAttributes() method sets the HTML attributes of the option.
      *
-     * @param array $attr An array of HTML attributes, in the format
+     * @param array $attributes An array of HTML attributes, in the format
      *                    `['attr_name' => 'attr_value']`.
      *
      * @return OptionAbstract The option object, for method chaining.
      */
-    public function withAttr(array $attr): OptionAbstract;
+    public function withAttributes(array $attributes): OptionAbstract;
 
     /**
      * The getId() method returns the ID of the option, as a string.

@@ -56,7 +56,7 @@ class Checkboxes extends OptionAbstract
      *
      * @return OptionAbstract
      */
-    public function setValue($value): Checkboxes
+    public function withValue($value): Checkboxes
     {
         if (!$this->isValueValid($value)) {
             throw new Exception('Incorrect value format. Example format: (string) $key => (bool) $value');

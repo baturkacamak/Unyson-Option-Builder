@@ -17,7 +17,7 @@ class Gradient extends OptionAbstract
      *
      * @return Gradient
      */
-    public function setValue($value): Gradient
+    public function withValue($value): Gradient
     {
         if (!$this->isValueValid($value)) {
             throw new Exception('Incorrect value format. Example format: (string) $key => (bool) $value');

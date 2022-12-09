@@ -5,56 +5,75 @@ namespace UnysonOptionsBuilder\Core;
 interface Option
 {
     /**
-     * @return string
+     * The getType() method returns the type of the option, as a string.
+     *
+     * @return string The type of the option.
      */
     public function getType(): string;
 
     /**
-     * @param string $textDomain
+     * The withTextDomain() method sets the text domain of the option, which is
+     * used for localization of labels, descriptions, and help text.
      *
-     * @return OptionAbstract
+     * @param string $textDomain The text domain of the option.
+     *
+     * @return OptionAbstract The option object, for method chaining.
      */
-    public function setTextDomain(string $textDomain): OptionAbstract;
+    public function withTextDomain(string $textDomain): OptionAbstract;
 
     /**
-     * @param string $value
+     * The withValue() method sets the value of the option.
      *
-     * @return OptionAbstract
+     * @param string $value The value of the option.
+     *
+     * @return OptionAbstract The option object, for method chaining.
      */
-    public function setValue(string $value): OptionAbstract;
+    public function withValue(string $value): OptionAbstract;
 
     /**
-     * @param array $attr
+     * The withAttr() method sets the HTML attributes of the option.
      *
-     * @return OptionAbstract
+     * @param array $attr An array of HTML attributes, in the format
+     *                    `['attr_name' => 'attr_value']`.
+     *
+     * @return OptionAbstract The option object, for method chaining.
      */
-    public function setAttr(array $attr): OptionAbstract;
+    public function withAttr(array $attr): OptionAbstract;
 
     /**
-     * @return string
+     * The getId() method returns the ID of the option, as a string.
+     *
+     * @return string The ID of the option.
      */
     public function getId(): string;
-    
-    /**
-     * @param string $label
-     *
-     * @return OptionAbstract
-     */
-    public function setLabel(string $label): OptionAbstract;
 
     /**
-     * @param string $desc
+     * The withLabel() method sets the label of the option.
      *
-     * @return OptionAbstract
+     * @param string $label The label of the option.
+     *
+     * @return OptionAbstract The option object, for method chaining.
      */
-    public function setDesc(string $desc): OptionAbstract;
+    public function withLabel(string $label): OptionAbstract;
 
     /**
-     * @param string $help
+     * The withDesc() method sets the description of the option.
      *
-     * @return OptionAbstract
+     * @param string $desc The description of the option.
+     *
+     * @return OptionAbstract The option object, for method chaining.
      */
-    public function setHelp(string $help): OptionAbstract;
+    public function withDesc(string $desc): OptionAbstract;
+
+    /**
+     * The withHelp() method sets the help text of the option, which will be
+     * displayed to users as a tooltip or popover.
+     *
+     * @param string $help The help text of the option.
+     *
+     * @return OptionAbstract The option object, for method chaining.
+     */
+    public function withHelp(string $help): OptionAbstract;
 
     /**
      * @return array

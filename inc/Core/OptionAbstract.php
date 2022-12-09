@@ -9,8 +9,8 @@ use Exception;
  * types of options in the Unyson Option Builder library.
  *
  * It provides methods for setting and retrieving option data, such as the
- * `setValue()` and `getArrayCopy()` methods, as well as methods for setting
- * and retrieving metadata, such as the `setLabel()` and `getType()` methods.
+ * `withValue()` and `getArrayCopy()` methods, as well as methods for setting
+ * and retrieving metadata, such as the `withLabel()` and `getType()` methods.
  *
  * The OptionAbstract class implements the Option interface, which defines the
  * methods that must be implemented by all option classes. This allows the
@@ -123,7 +123,7 @@ abstract class OptionAbstract implements Option
     }
 
     /**
-     * The setTextDomain() method sets the text domain of the option, which is used
+     * The withTextDomain() method sets the text domain of the option, which is used
      * to translate the option's label and description into the current language.
      *
      * If no text domain is specified, the default text domain of the current
@@ -133,7 +133,7 @@ abstract class OptionAbstract implements Option
      *
      * @return OptionAbstract The option object, for method chaining.
      */
-    public function setTextDomain(string $textDomain): OptionAbstract
+    public function withTextDomain(string $textDomain): OptionAbstract
     {
         $this->textDomain = $textDomain;
 
@@ -141,13 +141,13 @@ abstract class OptionAbstract implements Option
     }
 
     /**
-     * The setValue() method sets the value of the option.
+     * The withValue() method sets the value of the option.
      *
      * @param mixed $value The value of the option.
      *
      * @return OptionAbstract The option object, for method chaining.
      */
-    public function setValue($value): OptionAbstract
+    public function withValue($value): OptionAbstract
     {
         $this->value = $value;
 
@@ -155,14 +155,14 @@ abstract class OptionAbstract implements Option
     }
 
     /**
-     * The setAttr() method sets the HTML attributes of the option, such as the
+     * The withAttr() method sets the HTML attributes of the option, such as the
      * `class` attribute or the `style` attribute.
      *
      * @param array $attr The HTML attributes of the option.
      *
      * @return OptionAbstract The option object, for method chaining.
      */
-    public function setAttr(array $attr): OptionAbstract
+    public function withAttr(array $attr): OptionAbstract
     {
         $this->attr = $attr;
 
@@ -170,14 +170,14 @@ abstract class OptionAbstract implements Option
     }
 
     /**
-     * The setLabel() method sets the label of the option, which will be
+     * The withLabel() method sets the label of the option, which will be
      * displayed to users as the option name or title.
      *
      * @param string $label The label of the option.
      *
      * @return OptionAbstract The option object, for method chaining.
      */
-    public function setLabel(string $label): OptionAbstract
+    public function withLabel(string $label): OptionAbstract
     {
         $this->label = $label;
 
@@ -185,14 +185,14 @@ abstract class OptionAbstract implements Option
     }
 
     /**
-     * The setDesc() method sets the description of the option, which will be
+     * The withDesc() method sets the description of the option, which will be
      * displayed to users as additional information about the option.
      *
      * @param string $desc The description of the option.
      *
      * @return OptionAbstract The option object, for method chaining.
      */
-    public function setDesc(string $desc): OptionAbstract
+    public function withDesc(string $desc): OptionAbstract
     {
         $this->desc = $desc;
 
@@ -200,7 +200,7 @@ abstract class OptionAbstract implements Option
     }
 
     /**
-     * The setHelp() method sets the help text of the option, which will be
+     * The withHelp() method sets the help text of the option, which will be
      * displayed to users as a tooltip or pop-up message when they hover over
      * the option.
      *
@@ -208,7 +208,7 @@ abstract class OptionAbstract implements Option
      *
      * @return OptionAbstract The option object, for method chaining.
      */
-    public function setHelp(string $help): OptionAbstract
+    public function withHelp(string $help): OptionAbstract
     {
         $this->help = $help;
 
@@ -275,7 +275,7 @@ abstract class OptionAbstract implements Option
     {
         // set default text domain
         if (empty($this->textDomain)) {
-            $this->setTextDomain(wp_get_theme()->get('TextDomain'));
+            $this->withTextDomain(wp_get_theme()->get('TextDomain'));
         }
 
         return $this->textDomain;

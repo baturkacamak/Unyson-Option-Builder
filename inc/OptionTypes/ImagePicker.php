@@ -17,7 +17,7 @@ class ImagePicker extends OptionAbstract
      *
      * @return ImagePicker
      */
-    public function setValue($value): ImagePicker
+    public function withValue($value): ImagePicker
     {
         if (!$this->isValueValid($value)) {
             throw new Exception('Incorrect value format. Example format: (string) $key => (bool) $value');

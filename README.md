@@ -4,21 +4,33 @@
 
 ## Basic Usage
 
-Here is a simple example how to use this library
+To use the Option Builder, you will first need to include the autoloader in your PHP script:
 
 ```
 // make sure you have require the autoloader
-require_once __DIR__ . '/vendor/autoload.php';
+require_once DIR . '/vendor/autoload.php';
+```
 
+Next, you can create a new instance of the `Builder` class:
+```
 $builder = new Builder();
+```
+
+You can then add options to the builder using the `addOption()` method, which takes an instance of one of the available option classes (such as `Text`, `Select`, etc.) as its argument. For example:
+```
 $text1 = (new Text('fringilla'))->setLabel('Nunc fringilla');
 $text2 = (new Text('rhoncus'))->setLabel('Cras eget')->setAttr(['class' => 'html-class']);
 
 $builder->addOption($text1)->addOption($text2);
+```
 
+
+To retrieve the options that have been added to the builder, you can use the `getOptions()` method, which returns an array of option arrays:
+```
 $options = $builder->getOptions();
 ```
-will output
+
+The output of `$options` will be similar to the following:
 ```
 array(2) {
   [0]=>
@@ -48,3 +60,5 @@ array(2) {
   }
 }
 ```
+
+You can then use these options in your WordPress and Unyson FW configuration files, or in your IDE for easier development.

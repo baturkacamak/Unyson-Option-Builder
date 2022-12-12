@@ -47,7 +47,7 @@ class MultipleSelect extends OptionAbstract
      *
      * @return MultipleSelect
      */
-    public function setChoices(array $choices): MultipleSelect
+    public function withChoices(array $choices): MultipleSelect
     {
         $this->choices = $choices;
 

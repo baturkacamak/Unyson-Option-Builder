@@ -21,7 +21,7 @@ class ColorPicker extends OptionAbstract
      *
      * @return ColorPicker
      */
-    public function setPalettes(array $palettes): ColorPicker
+    public function withPalettes(array $palettes): ColorPicker
     {
         $this->palettes = $palettes;
 

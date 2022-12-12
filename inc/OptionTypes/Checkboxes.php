@@ -30,7 +30,7 @@ class Checkboxes extends OptionAbstract
      *
      * @return Checkboxes
      */
-    public function setInline(bool $inline): Checkboxes
+    public function withInline(bool $inline): Checkboxes
     {
         $this->inline = $inline;
 
@@ -40,9 +40,9 @@ class Checkboxes extends OptionAbstract
     /**
      * @param array $choices
      *
-     * @return OptionAbstract
+     * @return Checkboxes
      */
-    public function setChoices(array $choices): Checkboxes
+    public function withChoices(array $choices): Checkboxes
     {
         $this->choices = $choices;
 

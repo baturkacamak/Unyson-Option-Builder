@@ -24,7 +24,7 @@ class SwitchOption extends OptionAbstract
      *
      * @return SwitchOption
      */
-    public function setLeftChoice(array $leftChoice): SwitchOption
+    public function withLeftChoice(array $leftChoice): SwitchOption
     {
         $this->leftChoice = $leftChoice;
 
@@ -36,7 +36,7 @@ class SwitchOption extends OptionAbstract
      *
      * @return SwitchOption
      */
-    public function setRightChoice(array $rightChoice): SwitchOption
+    public function withRightChoice(array $rightChoice): SwitchOption
     {
         $this->rightChoice = $rightChoice;
 

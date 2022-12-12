@@ -41,7 +41,7 @@ class Radio extends OptionAbstract
      *
      * @return Radio
      */
-    public function setChoices(array $choices): Radio
+    public function withChoices(array $choices): Radio
     {
         $this->choices = $choices;
 

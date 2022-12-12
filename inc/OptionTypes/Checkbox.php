@@ -12,7 +12,7 @@ class Checkbox extends OptionAbstract
      *
      * @return Checkbox
      */
-    public function setText(string $text): Checkbox
+    public function withText(string $text): Checkbox
     {
         $this->text = $text;
 

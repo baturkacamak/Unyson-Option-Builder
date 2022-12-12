@@ -34,7 +34,7 @@ class Select extends OptionAbstract
      *
      * @return Select
      */
-    public function setNoValidate(bool $noValidate): Select
+    public function withNoValidate(bool $noValidate): Select
     {
         $this->noValidate = $noValidate;
 
@@ -46,7 +46,7 @@ class Select extends OptionAbstract
      *
      * @return Select
      */
-    public function setInline(bool $inline): Select
+    public function withInline(bool $inline): Select
     {
         $this->inline = $inline;
 
@@ -58,7 +58,7 @@ class Select extends OptionAbstract
      *
      * @return Select
      */
-    public function setChoices(array $choices): Select
+    public function withChoices(array $choices): Select
     {
         $this->choices = $choices;
 

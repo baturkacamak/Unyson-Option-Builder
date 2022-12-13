@@ -18,8 +18,8 @@ $builder = new Builder();
 
 You can then add options to the builder using the `addOption()` method, which takes an instance of one of the available option classes (such as `Text`, `Select`, etc.) as its argument. For example:
 ```
-$text1 = (new Text('fringilla'))->setLabel('Nunc fringilla');
-$text2 = (new Text('rhoncus'))->setLabel('Cras eget')->setAttr(['class' => 'html-class']);
+$text1 = (new Text('fringilla'))->withLabel('Nunc fringilla');
+$text2 = (new Text('rhoncus'))->withLabel('Cras eget')->withAttr(['class' => 'html-class']);
 
 $builder->addOption($text1)->addOption($text2);
 ```

@@ -8,7 +8,7 @@ To use the Option Builder, you will first need to include the autoloader in your
 
 ```
 // make sure you have require the autoloader
-require_once DIR . '/vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 ```
 
 Next, you can create a new instance of the `Builder` class:

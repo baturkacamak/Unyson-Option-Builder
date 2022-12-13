@@ -4,12 +4,16 @@ namespace UnysonOptionsBuilder\OptionTypes;
 
 use Exception;
 use UnysonOptionsBuilder\Core\OptionAbstract;
+use UnysonOptionsBuilder\Core\ValidatedOption;
 
 /**
  *
  */
 class Checkboxes extends OptionAbstract
 {
+
+    protected ValidatedOption $validator;
+
     /**
      * @var array
      */
@@ -24,6 +28,11 @@ class Checkboxes extends OptionAbstract
      * @var array|string[]
      */
     protected array $requiredProperties = ['choices'];
+
+    public function __construct()
+    {
+        $this->validator = new ValidatedOption();
+    }
 
     /**
      * @param bool $inline
@@ -52,13 +61,12 @@ class Checkboxes extends OptionAbstract
     /**
      * @param array $value
      *
+     * @return Checkboxes
      * @throws Exception
-     *
-     * @return OptionAbstract
      */
     public function withValue($value): Checkboxes
     {
-        if (!$this->isValueValid($value)) {
+        if (!$this->validator->isValueValid($value)) {
             throw new Exception('Incorrect value format. Example format: (string) $key => (bool) $value');
         }
 
@@ -73,25 +81,5 @@ class Checkboxes extends OptionAbstract
     public function getType(): string
     {
         return 'checkboxes';
-    }
-
-    /**
-     * This method will control the value is properly set
-     * Example value array(
-     * 'choice-1' => false,
-     * 'choice-2' => true,
-     * )
-     *
-     * @param $value
-     *
-     * @return bool
-     */
-    private function isValueValid($value): bool
-    {
-        return 0 === count(
-                array_filter($value, function ($array_value, $array_key) {
-                    return !is_bool($array_value) || !is_string($array_key);
-                }, ARRAY_FILTER_USE_BOTH)
-            );
     }
 }
